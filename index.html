@@ -152,7 +152,7 @@
       $("loadStatus").textContent="Documents found: "+snap.size;
       allChurches=snap.docs;
       allChurches.sort((a,b)=>(a.data().churchName||"").localeCompare(b.data().churchName||""));
-      renderChurches(); $("loadStatus").textContent="";
+      renderChurches(); $("loadStatus").textContent="Documents found: "+snap.size;
     }catch(e){$("churchList").innerHTML="<p class='muted'>Could not load church listings.</p>";$("loadStatus").textContent=e.message;}
   }
   $("searchBtn").addEventListener("click",renderChurches);
