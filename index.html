@@ -149,6 +149,7 @@
   async function loadChurches(){
     try{
       const snap=await db.collection("churches").get();
+      $("loadStatus").textContent="Documents found: "+snap.size;
       allChurches=snap.docs;
       allChurches.sort((a,b)=>(a.data().churchName||"").localeCompare(b.data().churchName||""));
       renderChurches(); $("loadStatus").textContent="";
